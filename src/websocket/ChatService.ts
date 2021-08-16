@@ -52,4 +52,6 @@ io.on("connect", (socket) => {
 
     callback(room);
   });
+
+  socket.on("message", (data) => {});
 });

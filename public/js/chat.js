@@ -66,6 +66,19 @@ document.getElementById('users_list').addEventListener("click", (event) => {
   }
 })
 
+document.getElementById("user_message").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    const message = e.target.value
+
+    e.target.value = ""
+
+    socket.emit("message", {
+      message,
+      idChatRoom: roomId
+    })
+  }
+})
+
 onLoad()
 
 
